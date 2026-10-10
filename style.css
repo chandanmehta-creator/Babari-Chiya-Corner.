@@ -3,4 +3,6 @@
 @media(max-width:430px){.hero h1{font-size:3.15rem}.hero-copy{font-size:15px}.hero-stamp{right:-10px;bottom:12%}.menu-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:145px 145px}.footer-grid{grid-template-columns:1fr}.footer-links{gap:12px}.copyright{display:block}.copyright span{display:block;margin-top:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 
+.brand-logo{display:block;width:112px;height:58px;object-fit:contain;border-radius:3px}
+
 
