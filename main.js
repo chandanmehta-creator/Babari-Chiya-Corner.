@@ -64,5 +64,15 @@ lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbo
 lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeLightbox(); });
 
-const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }), { threshold: .12 });
-document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+const revealElements = document.querySelectorAll('.reveal');
+if (typeof window.IntersectionObserver === 'function') {
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  }), { threshold: .12 });
+  revealElements.forEach(element => revealObserver.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+}
